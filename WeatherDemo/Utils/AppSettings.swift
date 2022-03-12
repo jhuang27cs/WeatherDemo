@@ -22,11 +22,6 @@ class AppSettings: NSObject {
         set { set(newValue.rawValue, "environmentType") }
     }
     
-    var themeSetting: AppThemeSetting {
-        get { return AppThemeSetting(rawValue: get("themeSetting", defaultValue: AppThemeSetting.light.rawValue) as! Int)!}
-        set { set(newValue.rawValue, "themeSetting") }
-    }
-    
     // default location is America/Chicago
     var latitude: Double {
         get { return get("latitude", defaultValue: 33.44) as! Double }
@@ -36,22 +31,6 @@ class AppSettings: NSObject {
     var longitude: Double {
         get { return get("longitude", defaultValue: -94.04) as! Double }
         set { set(newValue, "longitude") }
-    }
-    
-    var weatherDic : NSDictionary? {
-        get {
-            var wData = NSDictionary()
-            if let data = get("weatherDic", defaultValue: nil)  {
-                if let wD = KeyedUnarchiver.unarchiveObject(with: data as! Data) as? NSDictionary {
-                    wData =  wD
-                }
-            }
-            return wData
-        }
-        set {
-            let data = KeyedArchiver.archivedData(withRootObject: newValue ?? NSDictionary())
-            set(data, "weatherDic")
-        }
     }
     
     // MARK: - Utils
@@ -79,22 +58,6 @@ class AppSettings: NSObject {
    
     // MARK: - Private
     
-    private func setArchived(_ value: Any?, _ key: String!) {
-        var value = value
-        if let val = value {
-            value = KeyedArchiver.archivedData(withRootObject: val)
-        }
-        set(value, key)
-    }
-    
-    private func getArchived(_ key: String!, defaultValue: Any?) -> Any? {
-        var value = get(key, defaultValue: defaultValue)
-        if let val = value as? Data {
-            value = KeyedUnarchiver.unarchiveObject(with: val)
-        }
-        return value
-    }
-    
     private func set(_ value: Any?, _ key: String!) {
         if let userDefaults = UserDefaults(suiteName: "group.com.weatherdemo") {
             var settings = (userDefaults.value(forKey: settingsMainKey) as? [String: Any]) ?? [String: Any]()
@@ -119,14 +82,17 @@ class AppSettings: NSObject {
 }
 
 enum EnvironmentType: String, CaseIterable {
-    case prod, beta, stage, qa
+    // Can do env switch here
+    
+    case prod
+    //, beta, stage, qa
     
     func title() -> String {
         switch self {
         case .prod:                return "Production"
-        case .beta:                return "Beta"
-        case .stage:            return "Staging"
-        case .qa:                return "QA"
+//        case .beta:                return "Beta"
+//        case .stage:            return "Staging"
+//        case .qa:                return "QA"
         }
     }
     
@@ -142,9 +108,9 @@ extension ServerSettings {
     func host(_ environment: EnvironmentType) -> String {
         switch environment {
         case .prod:                 return "api.openweathermap.org"
-        case .beta:                 return "api.openweathermap.org"
-        case .stage:                return "api.openweathermap.org"
-        case .qa:                   return "api.openweathermap.org"
+//        case .beta:                 return "api.openweathermap.org"
+//        case .stage:                return "api.openweathermap.org"
+//        case .qa:                   return "api.openweathermap.org"
         }
     }
 }

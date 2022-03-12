@@ -21,8 +21,8 @@ extension NSNumber {
         return dateFormatter.string(from: date)
     }
     
-    func twoDecimalString() -> String {
+    func decimalString(deciNum: Int = 1) -> String {
         let doubleV: Double = self.doubleValue
-        return String(format: "%.2f", doubleV)
+        return String(format: "%.\(deciNum)f", doubleV)
     }
 }

@@ -18,12 +18,10 @@
 		716AE11127DB955E008A0BC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11027DB955E008A0BC3 /* Constants.swift */; };
 		716AE11327DB9644008A0BC3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11227DB9644008A0BC3 /* AppSettings.swift */; };
 		716AE11527DB96E0008A0BC3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11427DB96E0008A0BC3 /* Utils.swift */; };
-		716AE11727DB988C008A0BC3 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11627DB988C008A0BC3 /* ThemeManager.swift */; };
 		716AE11A27DB9EBB008A0BC3 /* OneCallAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11927DB9EBB008A0BC3 /* OneCallAPIRequest.swift */; };
 		716AE11F27DBAD06008A0BC3 /* OneCallAPIResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE11E27DBAD06008A0BC3 /* OneCallAPIResponseModel.swift */; };
 		716AE12C27DC33D0008A0BC3 /* DailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE12B27DC33D0008A0BC3 /* DailyModel.swift */; };
 		716AE12E27DC33E8008A0BC3 /* CurrentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE12D27DC33E7008A0BC3 /* CurrentModel.swift */; };
-		716AE13027DC45D8008A0BC3 /* KeyedArchiverAndUnarchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE12F27DC45D8008A0BC3 /* KeyedArchiverAndUnarchiver.swift */; };
 		716AE13227DC4DF5008A0BC3 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE13127DC4DF5008A0BC3 /* WeatherModel.swift */; };
 		716AE13427DC4F38008A0BC3 /* TempModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE13327DC4F38008A0BC3 /* TempModel.swift */; };
 		716AE13627DC5AA5008A0BC3 /* BaseDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716AE13527DC5AA5008A0BC3 /* BaseDayModel.swift */; };
@@ -50,12 +48,10 @@
 		716AE11027DB955E008A0BC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		716AE11227DB9644008A0BC3 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		716AE11427DB96E0008A0BC3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		716AE11627DB988C008A0BC3 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		716AE11927DB9EBB008A0BC3 /* OneCallAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallAPIRequest.swift; sourceTree = "<group>"; };
 		716AE11E27DBAD06008A0BC3 /* OneCallAPIResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallAPIResponseModel.swift; sourceTree = "<group>"; };
 		716AE12B27DC33D0008A0BC3 /* DailyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyModel.swift; sourceTree = "<group>"; };
 		716AE12D27DC33E7008A0BC3 /* CurrentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModel.swift; sourceTree = "<group>"; };
-		716AE12F27DC45D8008A0BC3 /* KeyedArchiverAndUnarchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedArchiverAndUnarchiver.swift; sourceTree = "<group>"; };
 		716AE13127DC4DF5008A0BC3 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		716AE13327DC4F38008A0BC3 /* TempModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempModel.swift; sourceTree = "<group>"; };
 		716AE13527DC5AA5008A0BC3 /* BaseDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDayModel.swift; sourceTree = "<group>"; };
@@ -113,7 +109,6 @@
 				716AE11827DB9E7A008A0BC3 /* Base */,
 				716AE13727DC64FC008A0BC3 /* Weather */,
 				716AE10F27DB9526008A0BC3 /* Utils */,
-				716AE10B27DB903D008A0BC3 /* NetworkActivityIndicatorManager.swift */,
 				716AE0FE27DB8B65008A0BC3 /* Assets.xcassets */,
 				716AE10027DB8B65008A0BC3 /* LaunchScreen.storyboard */,
 				716AE10327DB8B65008A0BC3 /* Info.plist */,
@@ -147,8 +142,7 @@
 				716AE11227DB9644008A0BC3 /* AppSettings.swift */,
 				716AE11427DB96E0008A0BC3 /* Utils.swift */,
 				716AE14627DC8A8D008A0BC3 /* Extensions.swift */,
-				716AE11627DB988C008A0BC3 /* ThemeManager.swift */,
-				716AE12F27DC45D8008A0BC3 /* KeyedArchiverAndUnarchiver.swift */,
+				716AE10B27DB903D008A0BC3 /* NetworkActivityIndicatorManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -346,14 +340,12 @@
 				716AE0F627DB8B63008A0BC3 /* AppDelegate.swift in Sources */,
 				716AE12C27DC33D0008A0BC3 /* DailyModel.swift in Sources */,
 				716AE0F827DB8B63008A0BC3 /* SceneDelegate.swift in Sources */,
-				716AE11727DB988C008A0BC3 /* ThemeManager.swift in Sources */,
 				716AE13427DC4F38008A0BC3 /* TempModel.swift in Sources */,
 				716AE14527DC7DD0008A0BC3 /* RootController.swift in Sources */,
 				716AE10C27DB903D008A0BC3 /* NetworkActivityIndicatorManager.swift in Sources */,
 				716AE11127DB955E008A0BC3 /* Constants.swift in Sources */,
 				716AE11527DB96E0008A0BC3 /* Utils.swift in Sources */,
 				716AE14127DC6A0E008A0BC3 /* CurrentWeatherCell.swift in Sources */,
-				716AE13027DC45D8008A0BC3 /* KeyedArchiverAndUnarchiver.swift in Sources */,
 				716AE13227DC4DF5008A0BC3 /* WeatherModel.swift in Sources */,
 				716AE14327DC6A31008A0BC3 /* DailyWeatherCell.swift in Sources */,
 				716AE11F27DBAD06008A0BC3 /* OneCallAPIResponseModel.swift in Sources */,

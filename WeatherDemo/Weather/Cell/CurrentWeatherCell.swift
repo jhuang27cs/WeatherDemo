@@ -15,20 +15,17 @@ class CurrentWeatherCell: UITableViewCell {
     @IBOutlet weak var tempLbl: UILabel!
     @IBOutlet weak var humidityLbl: UILabel!
     
-    private var weatherMode: CurrentModel?
+    private var currentDModel: CurrentModel?
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    // MARK: - Public Methods
     
     public func loadWeatherData(data: CurrentModel?) {
-        weatherMode = data
-        guard let wData = weatherMode else {
+        currentDModel = data
+        guard let wData = currentDModel else {
             return
         }
         self.dateLbl.text = wData.dt?.toDateString(withWeekDay: true)
-        let tempDouble: Double = wData.temp?.doubleValue ?? 0
-        self.tempLbl.text = String(format: "%.2f", tempDouble)
+        self.tempLbl.text = "\(wData.temp?.decimalString() ?? "")°C"
         self.humidityLbl.text = "\(wData.humidity?.intValue ?? 0)"
         
         if let wther = wData.weather?[0] {

@@ -19,15 +19,14 @@ class WeatherViewController: UIViewController {
     private var locationManager = CLLocationManager()
     private let refreshControl = UIRefreshControl()
     
-    
     // Constants
-    let currentDayIdentifier = "currentDayIdentifier"
-    let dailyIdentifier = "dailyIdentifier"
-    let storyboardName = "Weather"
-    let currentDayVCId = "CurrentDayDetailVC"
-    let estimateRowHeight = 40.0
+    private let currentDayIdentifier = "currentDayIdentifier"
+    private let dailyIdentifier = "dailyIdentifier"
+    private let storyboardName = "Weather"
+    private let currentDayVCId = "CurrentDayDetailVC"
+    private let estimateRowHeight = 40.0
     
-    var weatherData: OneCallAPIResponseModel?
+    private var weatherData: OneCallAPIResponseModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +47,13 @@ class WeatherViewController: UIViewController {
         // later, we can let user select area here
     }
     
-    @IBAction func refreshBtnDidtapped(_ sender: UIBarButtonItem) {        
+    @IBAction func refreshBtnDidtapped(_ sender: UIBarButtonItem) {
+        // It's better let user refresh the data
+        // if they already accepted the location service
+        //
+        // if (CLLocationManager.locationServicesEnabled()) {
+        //      self.loadWeatherData()
+        // } else
         let alert = UIAlertController(title: "", message: kPromotMsg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Allow", style: .default, handler: { (action) in
             self.setupCoreLocation()

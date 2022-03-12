@@ -39,7 +39,7 @@ class OneCallAPIRequest: BaseRequest {
     
     init(latitude: Double, longitude: Double,
          exclude: [ExculdeType]? = [.alerts, .hourly, .minutely],
-         units: Units? = nil,
+         units: Units? = .metric,
          lang: String? = nil) {
         super.init()
         let excludedStr = self.convert(excludes: exclude)
@@ -65,7 +65,6 @@ class OneCallAPIRequest: BaseRequest {
         guard let responseDic = data as? NSDictionary else {
             return result
         }
-        Settings.weatherDic = responseDic
         result.mj_setKeyValues(responseDic)
         return result
     }

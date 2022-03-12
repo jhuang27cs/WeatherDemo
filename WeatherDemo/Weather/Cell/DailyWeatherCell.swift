@@ -15,20 +15,18 @@ class DailyWeatherCell: UITableViewCell {
     @IBOutlet weak var highLbl: UILabel!
     @IBOutlet weak var lowLbl: UILabel!
     
-    private var weatherMode: DailyModel?
+    private var dailyModel: DailyModel?
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    // MARK: - Public Methods
     
     public func loadWeatherData(data: DailyModel?) {
-        weatherMode = data
-        guard let wData = weatherMode else {
+        dailyModel = data
+        guard let wData = dailyModel else {
             return
         }
         self.dateLbl.text = wData.dt?.toDateString(withWeekDay: true)
-        self.highLbl.text = wData.temp?.max?.twoDecimalString()
-        self.lowLbl.text = wData.temp?.min?.twoDecimalString()
+        self.highLbl.text = "\(wData.temp?.max?.decimalString() ?? "")°C"
+        self.lowLbl.text = "\(wData.temp?.min?.decimalString() ?? "")°C"
         
         if let wther = wData.weather?[0] {
             self.wImgView.sd_setImage(with: URL(string: wther.iconURL ?? ""))
