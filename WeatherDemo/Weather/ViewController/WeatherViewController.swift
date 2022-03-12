@@ -84,7 +84,6 @@ class WeatherViewController: UIViewController {
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         }
     }
